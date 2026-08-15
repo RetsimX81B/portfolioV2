@@ -1,404 +1,426 @@
+// ==========================================
+// PROJECTS
+// ==========================================
+
 const projects = [
 
     {
-        title: "BFL MotoGP",
+        title: {
+            en: "BFL MotoGP",
+            fr: "BFL MotoGP"
+        },
+
         cat: "logo",
+
         year: "2026",
-        desc: "Visual identity for an online MotoGP championship.",
+
+        desc: {
+            en: "Visual identity for an online MotoGP championship.",
+            fr: "Identité visuelle pour un championnat MotoGP en ligne."
+        },
+
         images: [
-            "bfl motogp.png"
+            "images/bfl-motogp.jpg"
         ]
     },
 
+
     {
-        title: "BFL SBK",
+        title: {
+            en: "BFL SBK",
+            fr: "BFL SBK"
+        },
+
         cat: "logo",
+
         year: "2026",
-        desc: "A complementary Superbike identity built as part of the BFL visual system.",
+
+        desc: {
+            en: "A complementary Superbike identity built as part of the BFL visual system.",
+            fr: "Une identité Superbike complémentaire créée dans le cadre du système visuel BFL."
+        },
+
         images: [
-            "bfl sbk.png"
+            "images/bfl-sbk.jpg"
         ]
     },
 
+
     {
-        title: "Motorsport Poster",
+        title: {
+            en: "Motorsport Poster",
+            fr: "Affiche Motorsport"
+        },
+
         cat: "poster",
+
         year: "2026",
-        desc: "Editorial motorsport poster exploring speed, typography and contrast.",
+
+        desc: {
+            en: "Editorial motorsport poster exploring speed, typography and contrast.",
+            fr: "Affiche éditoriale autour du motorsport explorant la vitesse, la typographie et le contraste."
+        },
+
         images: [
-            "poster aprilia.png"
+            "images/poster.jpg"
         ]
     },
 
+
     {
-        title: "Lando Norris",
+        title: {
+            en: "Lando Norris",
+            fr: "Lando Norris"
+        },
+
         cat: "motorsport",
+
         year: "2026",
-        desc: "Motorsport digital artwork.",
+
+        desc: {
+            en: "Motorsport digital artwork.",
+            fr: "Illustration digitale autour du motorsport."
+        },
+
         images: [
-            "landowallpaper.jpg"
+            "images/lando.jpg"
         ]
     },
 
+
     {
-        title: "Traditional Studies",
+        title: {
+            en: "Traditional Studies",
+            fr: "Études Traditionnelles"
+        },
+
         cat: "traditional",
+
         year: "2026",
-        desc: "Traditional drawing and observational studies.",
+
+        desc: {
+            en: "Traditional drawing and observational studies.",
+            fr: "Dessins traditionnels et études d'observation."
+        },
+
         images: [
-            "lando head copie.png",
+            "images/traditional-1.jpg",
             "images/traditional-2.jpg"
         ]
     },
 
+
     {
-        title: "Digital Illustration",
+        title: {
+            en: "Digital Illustration",
+            fr: "Illustration Digitale"
+        },
+
         cat: "digital",
+
         year: "2026",
-        desc: "Personal digital illustration project.",
+
+        desc: {
+            en: "Personal digital illustration project.",
+            fr: "Projet personnel d'illustration digitale."
+        },
+
         images: [
-            "dorine_draw copie.jpg"
+            "images/digital-1.jpg"
         ]
     },
 
+
     {
-        title: "Gym Identity",
+        title: {
+            en: "Gym Identity",
+            fr: "Identité Gym"
+        },
+
         cat: "logo",
+
         year: "2026",
-        desc: "Logo and visual identity exploration for a gym project.",
+
+        desc: {
+            en: "Logo and visual identity exploration for a gym project.",
+            fr: "Recherche de logo et d'identité visuelle pour un projet lié au sport."
+        },
+
         images: [
-            "logo_gym_V1-blanc-rond.jpg"
+            "images/gym-logo.jpg"
         ]
     },
 
+
     {
-        title: "Experimental Poster",
+        title: {
+            en: "Experimental Poster",
+            fr: "Affiche Expérimentale"
+        },
+
         cat: "poster",
+
         year: "2026",
-        desc: "Graphic experiment combining typography and imagery.",
+
+        desc: {
+            en: "Graphic experiment combining typography and imagery.",
+            fr: "Expérimentation graphique combinant typographie et image."
+        },
+
         images: [
-            "poster leclerc.png"
+            "images/poster-2.jpg"
         ]
     },
 
+
     {
-        title: "Sketchbook",
+        title: {
+            en: "Sketchbook",
+            fr: "Carnet de Croquis"
+        },
+
         cat: "traditional",
+
         year: "2026",
-        desc: "Selected traditional artwork and sketches.",
+
+        desc: {
+            en: "Selected traditional artwork and sketches.",
+            fr: "Sélection de dessins et travaux réalisés traditionnellement."
+        },
+
         images: [
-            "gracie.png"
+            "images/sketchbook.jpg"
         ]
     },
 
+
     {
-        title: "Visual Experiment",
+        title: {
+            en: "Visual Experiment",
+            fr: "Expérimentation Visuelle"
+        },
+
         cat: "other",
+
         year: "2026",
-        desc: "An experimental visual composition.",
+
+        desc: {
+            en: "An experimental visual composition.",
+            fr: "Une composition visuelle expérimentale."
+        },
+
         images: [
-            "BANNIERE copie.png"
+            "images/experiment.jpg"
         ]
     }
 
 ];
 
 
-// =========================
-// PROJECT GRID
-// =========================
+// ==========================================
+// LANGUAGE
+// ==========================================
 
-const grid = document.querySelector("#projects");
+let currentLanguage = "en";
 
 
-function render(filter = "all") {
+const translations = {
 
-    grid.innerHTML = "";
+    en: {
 
-    projects
-        .filter(
-            p => filter === "all" || p.cat === filter
-        )
-        .forEach((p, i) => {
+        navWork: "Work",
+        navAbout: "About",
+        navContact: "Contact",
 
-            const el = document.createElement("article");
+        mobileWork: "Work",
+        mobileAbout: "About",
+        mobileContact: "Contact",
 
-            el.className = "project reveal visible";
+        eyebrow: "GRAPHIC DESIGNER / VISUAL ARTIST",
 
-            el.innerHTML = `
-                <img
-                    src="${p.images[0]}"
-                    alt="${p.title}"
-                    loading="lazy"
-                    onerror="
-                        this.style.display='none';
-                        this.parentElement.classList.add('missing');
-                    "
-                >
+        heroCopy:
+            "I create bold visual identities, posters, digital art and experimental designs with a strong focus on motorsport and visual storytelling.",
 
-                <div class="project-info">
+        explore: "Explore work",
 
-                    <small>
-                        ${p.cat} · ${p.year}
-                    </small>
+        talk: "Let's talk",
 
-                    <h3>
-                        ${p.title}
-                    </h3>
+        scroll: "SCROLL TO EXPLORE",
 
-                </div>
-            `;
+        aboutWork: "ABOUT MY WORK",
 
-            el.onclick = () => openModal(p);
+        introTitle:
+            "Design with <em>speed, identity</em><br>and personality.",
 
-            grid.appendChild(el);
-        });
-}
+        introLead:
+            "A multidisciplinary portfolio mixing graphic design, illustration, traditional art and motorsport culture.",
 
+        selectedWork: "Selected work",
 
-render();
+        workDescription:
+            "Logos, posters, illustrations, traditional studies and visual experiments.",
 
+        aboutLabel: "ABOUT",
 
-// =========================
-// FILTERS
-// =========================
+        aboutTitle:
+            "More than<br><em>just visuals.</em>",
 
-document
-    .querySelectorAll(".filters button")
-    .forEach(button => {
+        aboutLead:
+            "I'm Alex, a graphic designer and visual artist interested in creating identities that feel distinctive and memorable.",
 
-        button.onclick = () => {
+        aboutText1:
+            "My work ranges from logos and brand systems to posters, digital illustrations, traditional drawings and motorsport graphics.",
 
-            document
-                .querySelector(".filters .active")
-                .classList.remove("active");
+        aboutText2:
+            "I like simple shapes, strong typography, movement and clean compositions.",
 
-            button.classList.add("active");
+        contactLabel:
+            "HAVE A PROJECT?",
 
-            render(button.dataset.filter);
-        };
+        contactTitle:
+            "LET'S MAKE<br><em>SOMETHING.</em>",
 
-    });
+        email:
+            "your@email.com",
 
+        footerLeft:
+            "ALEX © 2026",
 
-// =========================
-// MODAL
-// =========================
+        footerMiddle:
+            "GRAPHIC DESIGN / VISUAL ART",
 
-const modal = document.querySelector("#modal");
+        backTop:
+            "BACK TO TOP ↑",
 
-const modalImg = document.querySelector("#modal-img");
+        filters: [
+            "All",
+            "Logos",
+            "Posters",
+            "Digital Art",
+            "Traditional Art",
+            "Motorsport",
+            "Other"
+        ]
 
-const title = document.querySelector("#modal-title");
+    },
 
-const cat = document.querySelector("#modal-cat");
 
-const desc = document.querySelector("#modal-desc");
+    fr: {
 
-const thumbs = document.querySelector("#modal-thumbs");
+        navWork: "Projets",
+        navAbout: "À propos",
+        navContact: "Contact",
 
+        mobileWork: "Projets",
+        mobileAbout: "À propos",
+        mobileContact: "Contact",
 
-let current = null;
+        eyebrow: "GRAPHISTE / ARTISTE VISUEL",
 
-let index = 0;
+        heroCopy:
+            "Je crée des identités visuelles fortes, des affiches, des illustrations digitales et des designs expérimentaux, avec un intérêt particulier pour le motorsport et le storytelling visuel.",
 
+        explore: "Voir mes projets",
 
-// =========================
-// OPEN MODAL
-// =========================
+        talk: "Me contacter",
 
-function openModal(p) {
+        scroll: "DÉFILEZ POUR EXPLORER",
 
-    current = p;
+        aboutWork: "À PROPOS DE MON TRAVAIL",
 
-    index = 0;
+        introTitle:
+            "Du design avec <em>du mouvement,<br>de l'identité</em> et de la personnalité.",
 
-    modal.classList.add("open");
+        introLead:
+            "Un portfolio multidisciplinaire mêlant design graphique, illustration, art traditionnel et culture motorsport.",
 
-    document.body.style.overflow = "hidden";
+        selectedWork:
+            "Projets sélectionnés",
 
-    updateModal();
-}
+        workDescription:
+            "Logos, affiches, illustrations, dessins traditionnels et expérimentations visuelles.",
 
+        aboutLabel:
+            "À PROPOS",
 
-// =========================
-// UPDATE MODAL
-// =========================
+        aboutTitle:
+            "Plus que<br><em>des visuels.</em>",
 
-function updateModal() {
+        aboutLead:
+            "Je suis Alex, graphiste et artiste visuel, intéressé par la création d'identités distinctives et mémorables.",
 
-    modalImg.src = current.images[index];
+        aboutText1:
+            "Mon travail va de la création de logos et d'identités visuelles aux affiches, illustrations digitales, dessins traditionnels et visuels liés au motorsport.",
 
-    title.textContent = current.title;
+        aboutText2:
+            "J'aime les formes simples, les typographies fortes, le mouvement et les compositions propres.",
 
-    cat.textContent =
-        `${current.cat} · ${current.year}`;
+        contactLabel:
+            "UN PROJET ?",
 
-    desc.textContent = current.desc;
+        contactTitle:
+            "CRÉONS<br><em>QUELQUE CHOSE.</em>",
 
-    thumbs.innerHTML = "";
+        email:
+            "votre@email.com",
 
+        footerLeft:
+            "ALEX © 2026",
 
-    current.images.forEach((src, i) => {
+        footerMiddle:
+            "DESIGN GRAPHIQUE / ART VISUEL",
 
-        const im = document.createElement("img");
+        backTop:
+            "RETOUR EN HAUT ↑",
 
-        im.src = src;
+        filters: [
+            "Tout",
+            "Logos",
+            "Affiches",
+            "Art Digital",
+            "Art Traditionnel",
+            "Motorsport",
+            "Autre"
+        ]
 
-        im.className =
-            i === index
-                ? "active"
-                : "";
-
-
-        im.onclick = () => {
-
-            index = i;
-
-            updateModal();
-
-        };
-
-
-        thumbs.appendChild(im);
-
-    });
-
-}
-
-
-// =========================
-// CLOSE MODAL
-// =========================
-
-function closeModal() {
-
-    modal.classList.remove("open");
-
-    document.body.style.overflow = "";
-}
-
-
-document
-    .querySelector(".close")
-    .onclick = closeModal;
-
-
-// =========================
-// PREVIOUS / NEXT
-// =========================
-
-document
-    .querySelector(".prev")
-    .onclick = () => {
-
-        if (current) {
-
-            index =
-                (index - 1 + current.images.length)
-                % current.images.length;
-
-            updateModal();
-
-        }
-
-    };
-
-
-document
-    .querySelector(".next")
-    .onclick = () => {
-
-        if (current) {
-
-            index =
-                (index + 1)
-                % current.images.length;
-
-            updateModal();
-
-        }
-
-    };
-
-
-// =========================
-// KEYBOARD NAVIGATION
-// =========================
-
-document.addEventListener(
-    "keydown",
-    e => {
-
-        if (!modal.classList.contains("open")) {
-            return;
-        }
-
-        if (e.key === "Escape") {
-            closeModal();
-        }
-
-        if (e.key === "ArrowLeft") {
-            document.querySelector(".prev").click();
-        }
-
-        if (e.key === "ArrowRight") {
-            document.querySelector(".next").click();
-        }
-
-    }
-);
-
-
-// =========================
-// CLICK OUTSIDE MODAL
-// =========================
-
-modal.onclick = e => {
-
-    if (e.target === modal) {
-        closeModal();
     }
 
 };
 
 
-// =========================
-// MOBILE MENU
-// =========================
+// ==========================================
+// DOM ELEMENTS
+// ==========================================
 
-const menu = document.querySelector("#menu");
+const grid =
+    document.querySelector("#projects");
+
+const modal =
+    document.querySelector("#modal");
+
+const modalImg =
+    document.querySelector("#modal-img");
+
+const modalTitle =
+    document.querySelector("#modal-title");
+
+const modalCat =
+    document.querySelector("#modal-cat");
+
+const modalDesc =
+    document.querySelector("#modal-desc");
+
+const modalThumbs =
+    document.querySelector("#modal-thumbs");
+
+const lang =
+    document.querySelector("#lang");
+
+const menu =
+    document.querySelector("#menu");
 
 const mobile =
     document.querySelector(".mobile-nav");
-
-
-menu.onclick = () => {
-
-    mobile.classList.toggle("open");
-
-};
-
-
-mobile
-    .querySelectorAll("a")
-    .forEach(a => {
-
-        a.onclick = () => {
-
-            mobile.classList.remove("open");
-
-        };
-
-    });
-
-
-
-
-
-// =========================
-// MOUSE LIGHT / CURSOR
-// =========================
 
 const light =
     document.querySelector(".mouse-light");
@@ -410,61 +432,148 @@ const dot =
     document.querySelector(".cursor-dot");
 
 
-window.addEventListener(
-    "mousemove",
-    e => {
+// ==========================================
+// CURRENT PROJECT / IMAGE
+// ==========================================
 
-        light.style.left =
-            e.clientX + "px";
+let currentProject = null;
 
-        light.style.top =
-            e.clientY + "px";
+let currentImageIndex = 0;
 
-
-        cursor.style.left =
-            e.clientX + "px";
-
-        cursor.style.top =
-            e.clientY + "px";
+let currentFilter = "all";
 
 
-        dot.style.left =
-            e.clientX + "px";
+// ==========================================
+// GET PROJECT CATEGORY NAME
+// ==========================================
 
-        dot.style.top =
-            e.clientY + "px";
+function getCategoryName(category) {
 
-    }
-);
+    const categoryIndex = {
+
+        logo: 1,
+        poster: 2,
+        digital: 3,
+        traditional: 4,
+        motorsport: 5,
+        other: 6
+
+    };
+
+    return translations[currentLanguage]
+        .filters[categoryIndex[category]];
+
+}
 
 
-// =========================
-// CURSOR HOVER EFFECT
-// =========================
+// ==========================================
+// RENDER PROJECTS
+// ==========================================
 
-document
-    .querySelectorAll("a, button, .project")
-    .forEach(el => {
+function render(filter = "all") {
 
-        el.addEventListener(
-            "mouseenter",
-            () => {
+    currentFilter = filter;
 
-                cursor.style.width = "55px";
+    grid.innerHTML = "";
 
-                cursor.style.height = "55px";
 
-            }
+    const filteredProjects =
+        projects.filter(project => {
+
+            return (
+                filter === "all" ||
+                project.cat === filter
+            );
+
+        });
+
+
+    filteredProjects.forEach(project => {
+
+        const element =
+            document.createElement("article");
+
+
+        element.className =
+            "project reveal visible";
+
+
+        const title =
+            project.title[currentLanguage];
+
+
+        const category =
+            getCategoryName(project.cat);
+
+
+        element.innerHTML = `
+
+            <img
+                src="${project.images[0]}"
+                alt="${title}"
+                loading="lazy"
+                onerror="
+                    this.style.display='none';
+                    this.parentElement.classList.add('missing');
+                "
+            >
+
+            <div class="project-info">
+
+                <small>
+                    ${category} · ${project.year}
+                </small>
+
+                <h3>
+                    ${title}
+                </h3>
+
+            </div>
+
+        `;
+
+
+        element.addEventListener(
+            "click",
+            () => openModal(project)
         );
 
 
-        el.addEventListener(
-            "mouseleave",
+        grid.appendChild(element);
+
+    });
+
+}
+
+
+// Initial render
+
+render();
+
+
+// ==========================================
+// FILTERS
+// ==========================================
+
+document
+    .querySelectorAll(".filters button")
+    .forEach((button, index) => {
+
+        button.addEventListener(
+            "click",
             () => {
 
-                cursor.style.width = "34px";
+                document
+                    .querySelector(".filters .active")
+                    .classList.remove("active");
 
-                cursor.style.height = "34px";
+
+                button.classList.add("active");
+
+
+                render(
+                    button.dataset.filter
+                );
 
             }
         );
@@ -472,23 +581,815 @@ document
     });
 
 
-// =========================
+// ==========================================
+// OPEN MODAL
+// ==========================================
+
+function openModal(project) {
+
+    currentProject = project;
+
+    currentImageIndex = 0;
+
+
+    modal.classList.add("open");
+
+    document.body.style.overflow =
+        "hidden";
+
+
+    updateModal();
+
+}
+
+
+// ==========================================
+// UPDATE MODAL
+// ==========================================
+
+function updateModal() {
+
+    if (!currentProject) {
+        return;
+    }
+
+
+    const title =
+        currentProject.title[currentLanguage];
+
+
+    const description =
+        currentProject.desc[currentLanguage];
+
+
+    const category =
+        getCategoryName(
+            currentProject.cat
+        );
+
+
+    modalImg.src =
+        currentProject.images[
+            currentImageIndex
+        ];
+
+
+    modalImg.alt =
+        title;
+
+
+    modalTitle.textContent =
+        title;
+
+
+    modalCat.textContent =
+        `${category} · ${currentProject.year}`;
+
+
+    modalDesc.textContent =
+        description;
+
+
+    modalThumbs.innerHTML = "";
+
+
+    currentProject.images.forEach(
+        (image, index) => {
+
+            const thumbnail =
+                document.createElement("img");
+
+
+            thumbnail.src = image;
+
+
+            thumbnail.alt =
+                `${title} image ${index + 1}`;
+
+
+            thumbnail.className =
+                index === currentImageIndex
+                    ? "active"
+                    : "";
+
+
+            thumbnail.addEventListener(
+                "click",
+                () => {
+
+                    currentImageIndex =
+                        index;
+
+                    updateModal();
+
+                }
+            );
+
+
+            modalThumbs.appendChild(
+                thumbnail
+            );
+
+        }
+    );
+
+}
+
+
+// ==========================================
+// CLOSE MODAL
+// ==========================================
+
+function closeModal() {
+
+    modal.classList.remove("open");
+
+    document.body.style.overflow = "";
+
+}
+
+
+// Close button
+
+document
+    .querySelector(".close")
+    .addEventListener(
+        "click",
+        closeModal
+    );
+
+
+// ==========================================
+// PREVIOUS IMAGE
+// ==========================================
+
+document
+    .querySelector(".prev")
+    .addEventListener(
+        "click",
+        () => {
+
+            if (!currentProject) {
+                return;
+            }
+
+
+            currentImageIndex =
+                (
+                    currentImageIndex -
+                    1 +
+                    currentProject.images.length
+                )
+                %
+                currentProject.images.length;
+
+
+            updateModal();
+
+        }
+    );
+
+
+// ==========================================
+// NEXT IMAGE
+// ==========================================
+
+document
+    .querySelector(".next")
+    .addEventListener(
+        "click",
+        () => {
+
+            if (!currentProject) {
+                return;
+            }
+
+
+            currentImageIndex =
+                (
+                    currentImageIndex +
+                    1
+                )
+                %
+                currentProject.images.length;
+
+
+            updateModal();
+
+        }
+    );
+
+
+// ==========================================
+// KEYBOARD CONTROLS
+// ==========================================
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (!modal.classList.contains("open")) {
+            return;
+        }
+
+
+        if (event.key === "Escape") {
+
+            closeModal();
+
+        }
+
+
+        if (event.key === "ArrowLeft") {
+
+            document
+                .querySelector(".prev")
+                .click();
+
+        }
+
+
+        if (event.key === "ArrowRight") {
+
+            document
+                .querySelector(".next")
+                .click();
+
+        }
+
+    }
+);
+
+
+// ==========================================
+// CLOSE MODAL WHEN CLICKING BACKGROUND
+// ==========================================
+
+modal.addEventListener(
+    "click",
+    event => {
+
+        if (event.target === modal) {
+
+            closeModal();
+
+        }
+
+    }
+);
+
+
+// ==========================================
+// MOBILE MENU
+// ==========================================
+
+if (menu && mobile) {
+
+    menu.addEventListener(
+        "click",
+        () => {
+
+            mobile.classList.toggle(
+                "open"
+            );
+
+        }
+    );
+
+
+    mobile
+        .querySelectorAll("a")
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    mobile.classList.remove(
+                        "open"
+                    );
+
+                }
+            );
+
+        });
+
+}
+
+
+// ==========================================
+// LANGUAGE SWITCH
+// ==========================================
+
+function setLanguage(language) {
+
+    currentLanguage = language;
+
+
+    document.documentElement.lang =
+        language;
+
+
+    const t =
+        translations[language];
+
+
+    // Navigation
+
+    const navLinks =
+        document.querySelectorAll(
+            "header nav a"
+        );
+
+
+    if (navLinks.length >= 3) {
+
+        navLinks[0].textContent =
+            t.navWork;
+
+        navLinks[1].textContent =
+            t.navAbout;
+
+        navLinks[2].textContent =
+            t.navContact;
+
+    }
+
+
+    // Mobile navigation
+
+    const mobileLinks =
+        document.querySelectorAll(
+            ".mobile-nav a"
+        );
+
+
+    if (mobileLinks.length >= 3) {
+
+        mobileLinks[0].textContent =
+            t.mobileWork;
+
+        mobileLinks[1].textContent =
+            t.mobileAbout;
+
+        mobileLinks[2].textContent =
+            t.mobileContact;
+
+    }
+
+
+    // Hero
+
+    const eyebrow =
+        document.querySelector(
+            ".eyebrow"
+        );
+
+
+    if (eyebrow) {
+
+        eyebrow.textContent =
+            t.eyebrow;
+
+    }
+
+
+    const heroCopy =
+        document.querySelector(
+            ".hero-copy"
+        );
+
+
+    if (heroCopy) {
+
+        heroCopy.textContent =
+            t.heroCopy;
+
+    }
+
+
+    const explore =
+        document.querySelector(
+            ".btn"
+        );
+
+
+    if (explore) {
+
+        explore.innerHTML =
+            `${t.explore} <b>↗</b>`;
+
+    }
+
+
+    const talk =
+        document.querySelector(
+            ".ghost"
+        );
+
+
+    if (talk) {
+
+        talk.textContent =
+            t.talk;
+
+    }
+
+
+    const heroMeta =
+        document.querySelectorAll(
+            ".hero-meta span"
+        );
+
+
+    if (heroMeta.length > 0) {
+
+        heroMeta[0].textContent =
+            t.scroll;
+
+    }
+
+
+    // Intro
+
+    const introLabel =
+        document.querySelector(
+            ".intro .label"
+        );
+
+
+    if (introLabel) {
+
+        introLabel.textContent =
+            t.aboutWork;
+
+    }
+
+
+    const introTitle =
+        document.querySelector(
+            ".intro h2"
+        );
+
+
+    if (introTitle) {
+
+        introTitle.innerHTML =
+            t.introTitle;
+
+    }
+
+
+    const introLead =
+        document.querySelector(
+            ".intro .lead"
+        );
+
+
+    if (introLead) {
+
+        introLead.textContent =
+            t.introLead;
+
+    }
+
+
+    // Work
+
+    const workTitle =
+        document.querySelector(
+            ".section-head h2"
+        );
+
+
+    if (workTitle) {
+
+        workTitle.textContent =
+            t.selectedWork;
+
+    }
+
+
+    const workDescription =
+        document.querySelector(
+            ".section-head > p"
+        );
+
+
+    if (workDescription) {
+
+        workDescription.textContent =
+            t.workDescription;
+
+    }
+
+
+    // Filters
+
+    const filters =
+        document.querySelectorAll(
+            ".filters button"
+        );
+
+
+    filters.forEach(
+        (button, index) => {
+
+            button.textContent =
+                t.filters[index];
+
+        }
+    );
+
+
+    // About
+
+    const aboutLabel =
+        document.querySelector(
+            "#about .label"
+        );
+
+
+    if (aboutLabel) {
+
+        aboutLabel.textContent =
+            t.aboutLabel;
+
+    }
+
+
+    const aboutTitle =
+        document.querySelector(
+            "#about h2"
+        );
+
+
+    if (aboutTitle) {
+
+        aboutTitle.innerHTML =
+            t.aboutTitle;
+
+    }
+
+
+    const aboutParagraphs =
+        document.querySelectorAll(
+            "#about p"
+        );
+
+
+    if (aboutParagraphs.length >= 3) {
+
+        aboutParagraphs[1].textContent =
+            t.aboutLead;
+
+        aboutParagraphs[2].textContent =
+            t.aboutText1;
+
+        if (aboutParagraphs[3]) {
+
+            aboutParagraphs[3].textContent =
+                t.aboutText2;
+
+        }
+
+    }
+
+
+    // Contact
+
+    const contactLabel =
+        document.querySelector(
+            "#contact .label"
+        );
+
+
+    if (contactLabel) {
+
+        contactLabel.textContent =
+            t.contactLabel;
+
+    }
+
+
+    const contactTitle =
+        document.querySelector(
+            "#contact h2"
+        );
+
+
+    if (contactTitle) {
+
+        contactTitle.innerHTML =
+            t.contactTitle;
+
+    }
+
+
+    // Email
+
+    const email =
+        document.querySelector(
+            ".mail"
+        );
+
+
+    if (email) {
+
+        email.innerHTML =
+            `${t.email} <span>↗</span>`;
+
+    }
+
+
+    // Footer
+
+    const footer =
+        document.querySelectorAll(
+            "footer span"
+        );
+
+
+    if (footer.length >= 3) {
+
+        footer[0].textContent =
+            t.footerLeft;
+
+        footer[1].textContent =
+            t.footerMiddle;
+
+        footer[2].querySelector("a").textContent =
+            t.backTop;
+
+    }
+
+
+    // Language button
+
+    lang.textContent =
+        language === "en"
+            ? "FR"
+            : "EN";
+
+
+    // Re-render projects
+
+    render(currentFilter);
+
+
+    // Update modal if open
+
+    if (
+        modal.classList.contains("open") &&
+        currentProject
+    ) {
+
+        updateModal();
+
+    }
+
+}
+
+
+// ==========================================
+// LANGUAGE BUTTON
+// ==========================================
+
+lang.addEventListener(
+    "click",
+    () => {
+
+        const newLanguage =
+            currentLanguage === "en"
+                ? "fr"
+                : "en";
+
+
+        setLanguage(
+            newLanguage
+        );
+
+    }
+);
+
+
+// ==========================================
+// MOUSE LIGHT
+// ==========================================
+
+if (light) {
+
+    window.addEventListener(
+        "mousemove",
+        event => {
+
+            light.style.left =
+                `${event.clientX}px`;
+
+            light.style.top =
+                `${event.clientY}px`;
+
+        }
+    );
+
+}
+
+
+// ==========================================
+// CUSTOM CURSOR
+// ==========================================
+
+if (cursor && dot) {
+
+    window.addEventListener(
+        "mousemove",
+        event => {
+
+            cursor.style.left =
+                `${event.clientX}px`;
+
+            cursor.style.top =
+                `${event.clientY}px`;
+
+
+            dot.style.left =
+                `${event.clientX}px`;
+
+            dot.style.top =
+                `${event.clientY}px`;
+
+        }
+    );
+
+
+    function setupCursorHover() {
+
+        document
+            .querySelectorAll(
+                "a, button, .project"
+            )
+            .forEach(element => {
+
+                element.addEventListener(
+                    "mouseenter",
+                    () => {
+
+                        cursor.style.width =
+                            "55px";
+
+                        cursor.style.height =
+                            "55px";
+
+                    }
+                );
+
+
+                element.addEventListener(
+                    "mouseleave",
+                    () => {
+
+                        cursor.style.width =
+                            "34px";
+
+                        cursor.style.height =
+                            "34px";
+
+                    }
+                );
+
+            });
+
+    }
+
+
+    setupCursorHover();
+
+}
+
+
+// ==========================================
 // SCROLL REVEAL
-// =========================
+// ==========================================
 
 const observer =
     new IntersectionObserver(
         entries => {
 
-            entries.forEach(e => {
+            entries.forEach(
+                entry => {
 
-                if (e.isIntersecting) {
+                    if (
+                        entry.isIntersecting
+                    ) {
 
-                    e.target.classList.add("visible");
+                        entry.target.classList.add(
+                            "visible"
+                        );
+
+                    }
 
                 }
-
-            });
+            );
 
         },
         {
@@ -499,92 +1400,15 @@ const observer =
 
 document
     .querySelectorAll(".reveal")
-    .forEach(el => {
+    .forEach(element => {
 
-        observer.observe(el);
+        observer.observe(element);
 
     });
 
-const translations = {
-    en: {
-        work: "Work",
-        about: "About",
-        contact: "Contact",
-        explore: "Explore work",
-        talk: "Let's talk",
-        scroll: "SCROLL TO EXPLORE",
-        selected: "Selected work",
-        filters: ["All", "Logos", "Posters", "Digital Art", "Traditional Art", "Motorsport", "Other"],
-        aboutTitle: "More than<br><em>just visuals.</em>",
-        contactTitle: "LET'S MAKE<br><em>SOMETHING.</em>"
-    },
 
-    fr: {
-        work: "Projets",
-        about: "À propos",
-        contact: "Contact",
-        explore: "Voir mes projets",
-        talk: "Me contacter",
-        scroll: "FAITES DÉFILER POUR EXPLORER",
-        selected: "Projets sélectionnés",
-        filters: ["Tout", "Logos", "Affiches", "Art digital", "Art traditionnel", "Motorsport", "Autre"],
-        aboutTitle: "Plus que<br><em>des visuels.</em>",
-        contactTitle: "CRÉONS<br><em>QUELQUE CHOSE.</em>"
-    }
-};
+// ==========================================
+// INITIAL LANGUAGE
+// ==========================================
 
-
-function translatePage(language) {
-
-    const t = translations[language];
-
-    document.querySelectorAll("nav a")[0].textContent = t.work;
-    document.querySelectorAll("nav a")[1].textContent = t.about;
-    document.querySelectorAll("nav a")[2].textContent = t.contact;
-
-    document.querySelector(".btn").innerHTML =
-        `${t.explore} <b>↗</b>`;
-
-    document.querySelector(".ghost").textContent =
-        t.talk;
-
-    document.querySelector(".hero-meta span").textContent =
-        t.scroll;
-
-    document.querySelector(".section-head h2").textContent =
-        t.selected;
-
-    document.querySelector(".about h2").innerHTML =
-        t.aboutTitle;
-
-    document.querySelector(".contact h2").innerHTML =
-        t.contactTitle;
-
-
-    document.querySelectorAll(".filters button").forEach(
-        (button, index) => {
-
-            button.textContent =
-                t.filters[index];
-
-        }
-    );
-}
-
-
-lang.onclick = () => {
-
-    const newLanguage =
-        document.documentElement.lang === "en"
-            ? "fr"
-            : "en";
-
-    document.documentElement.lang = newLanguage;
-
-    lang.textContent =
-        newLanguage === "en"
-            ? "FR"
-            : "EN";
-
-    translatePage(newLanguage);
-};
+setLanguage("en");
