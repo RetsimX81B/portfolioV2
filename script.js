@@ -393,27 +393,7 @@ mobile
     });
 
 
-// =========================
-// LANGUAGE BUTTON
-// =========================
 
-const lang = document.querySelector("#lang");
-
-
-lang.onclick = () => {
-
-    document.documentElement.lang =
-        document.documentElement.lang === "en"
-            ? "fr"
-            : "en";
-
-
-    lang.textContent =
-        document.documentElement.lang === "en"
-            ? "FR"
-            : "EN";
-
-};
 
 
 // =========================
@@ -524,3 +504,87 @@ document
         observer.observe(el);
 
     });
+
+const translations = {
+    en: {
+        work: "Work",
+        about: "About",
+        contact: "Contact",
+        explore: "Explore work",
+        talk: "Let's talk",
+        scroll: "SCROLL TO EXPLORE",
+        selected: "Selected work",
+        filters: ["All", "Logos", "Posters", "Digital Art", "Traditional Art", "Motorsport", "Other"],
+        aboutTitle: "More than<br><em>just visuals.</em>",
+        contactTitle: "LET'S MAKE<br><em>SOMETHING.</em>"
+    },
+
+    fr: {
+        work: "Projets",
+        about: "À propos",
+        contact: "Contact",
+        explore: "Voir mes projets",
+        talk: "Me contacter",
+        scroll: "FAITES DÉFILER POUR EXPLORER",
+        selected: "Projets sélectionnés",
+        filters: ["Tout", "Logos", "Affiches", "Art digital", "Art traditionnel", "Motorsport", "Autre"],
+        aboutTitle: "Plus que<br><em>des visuels.</em>",
+        contactTitle: "CRÉONS<br><em>QUELQUE CHOSE.</em>"
+    }
+};
+
+
+function translatePage(language) {
+
+    const t = translations[language];
+
+    document.querySelectorAll("nav a")[0].textContent = t.work;
+    document.querySelectorAll("nav a")[1].textContent = t.about;
+    document.querySelectorAll("nav a")[2].textContent = t.contact;
+
+    document.querySelector(".btn").innerHTML =
+        `${t.explore} <b>↗</b>`;
+
+    document.querySelector(".ghost").textContent =
+        t.talk;
+
+    document.querySelector(".hero-meta span").textContent =
+        t.scroll;
+
+    document.querySelector(".section-head h2").textContent =
+        t.selected;
+
+    document.querySelector(".about h2").innerHTML =
+        t.aboutTitle;
+
+    document.querySelector(".contact h2").innerHTML =
+        t.contactTitle;
+
+
+    document.querySelectorAll(".filters button").forEach(
+        (button, index) => {
+
+            button.textContent =
+                t.filters[index];
+
+        }
+    );
+}
+
+
+lang.onclick = () => {
+
+    const newLanguage =
+        document.documentElement.lang === "en"
+            ? "fr"
+            : "en";
+
+    document.documentElement.lang = newLanguage;
+
+    lang.textContent =
+        newLanguage === "en"
+            ? "FR"
+            : "EN";
+
+    translatePage(newLanguage);
+};
