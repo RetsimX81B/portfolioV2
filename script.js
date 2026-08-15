@@ -345,7 +345,7 @@ const translations = {
             "Plus que<br><em>des visuels.</em>",
 
         aboutLead:
-            "Je suis Alex, graphiste et artiste visuel, intéressé par la création d'identités distinctives et mémorables. (",
+            "Je suis Alex, graphiste et artiste visuel, intéressé par la création d'identités distinctives et mémorables.",
 
         aboutText1:
             "Mon travail va de la création de logos et d'identités visuelles aux affiches, illustrations digitales, dessins traditionnels et visuels liés au motorsport. ( demande deuxième portfolio via discord )",
