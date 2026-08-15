@@ -267,7 +267,7 @@ const translations = {
             "I'm Alex, a graphic designer and visual artist interested in creating identities that feel distinctive and memorable.",
 
         aboutText1:
-            "My work ranges from logos and brand systems to posters, digital illustrations, traditional drawings and motorsport graphics.",
+            "My work ranges from logos and brand systems to posters, digital illustrations, traditional drawings and motorsport graphics. ( request a second portfolio via Discord )",
 
         aboutText2:
             "I like simple shapes, strong typography, movement and clean compositions.",
@@ -279,7 +279,7 @@ const translations = {
             "LET'S MAKE<br><em>SOMETHING.</em>",
 
         email:
-            "your@email.com",
+            "discord : retsimxsora",
 
         footerLeft:
             "ALEX © 2026",
@@ -345,10 +345,10 @@ const translations = {
             "Plus que<br><em>des visuels.</em>",
 
         aboutLead:
-            "Je suis Alex, graphiste et artiste visuel, intéressé par la création d'identités distinctives et mémorables.",
+            "Je suis Alex, graphiste et artiste visuel, intéressé par la création d'identités distinctives et mémorables. (",
 
         aboutText1:
-            "Mon travail va de la création de logos et d'identités visuelles aux affiches, illustrations digitales, dessins traditionnels et visuels liés au motorsport.",
+            "Mon travail va de la création de logos et d'identités visuelles aux affiches, illustrations digitales, dessins traditionnels et visuels liés au motorsport. ( demande deuxième portfolio via discord )",
 
         aboutText2:
             "J'aime les formes simples, les typographies fortes, le mouvement et les compositions propres.",
@@ -360,7 +360,7 @@ const translations = {
             "CRÉONS<br><em>QUELQUE CHOSE.</em>",
 
         email:
-            "votre@email.com",
+            "discord : retsimxsora",
 
         footerLeft:
             "ALEX © 2026",
