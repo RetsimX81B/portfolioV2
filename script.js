@@ -1,6 +1,4 @@
-// ==========================================
-// PROJECTS
-// ==========================================
+
 
 const projects = [
 
@@ -20,7 +18,7 @@ const projects = [
         },
 
         images: [
-            "images/bfl-motogp.jpg"
+            "bfl motogp.png"
         ]
     },
 
@@ -41,7 +39,7 @@ const projects = [
         },
 
         images: [
-            "images/bfl-sbk.jpg"
+            "blf sbk.png"
         ]
     },
 
@@ -62,7 +60,7 @@ const projects = [
         },
 
         images: [
-            "images/poster.jpg"
+            "poster aprilia.png"
         ]
     },
 
@@ -83,7 +81,7 @@ const projects = [
         },
 
         images: [
-            "images/lando.jpg"
+            "lando head copie.jpg"
         ]
     },
 
@@ -104,8 +102,8 @@ const projects = [
         },
 
         images: [
-            "images/traditional-1.jpg",
-            "images/traditional-2.jpg"
+            "gracie.png",
+            "ollie.png"
         ]
     },
 
@@ -126,7 +124,7 @@ const projects = [
         },
 
         images: [
-            "images/digital-1.jpg"
+            "dorine_draw copie.jpg"
         ]
     },
 
@@ -147,7 +145,7 @@ const projects = [
         },
 
         images: [
-            "images/gym-logo.jpg"
+            "logo_gym_V1-blanc-rond.jpg"
         ]
     },
 
@@ -168,7 +166,7 @@ const projects = [
         },
 
         images: [
-            "images/poster-2.jpg"
+            "poster leclerc.png"
         ]
     },
 
@@ -189,7 +187,7 @@ const projects = [
         },
 
         images: [
-            "images/sketchbook.jpg"
+            "mandalorian.png"
         ]
     },
 
@@ -210,7 +208,7 @@ const projects = [
         },
 
         images: [
-            "images/experiment.jpg"
+            "BANNIERE cope.png"
         ]
     }
 
