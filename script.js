@@ -39,7 +39,7 @@ const projects = [
         },
 
         images: [
-            "blf sbk.png"
+            "bfl sbk.png"
         ]
     },
 
@@ -81,7 +81,7 @@ const projects = [
         },
 
         images: [
-            "lando head copie.jpg"
+            "lando head copie.png"
         ]
     },
 
@@ -208,7 +208,7 @@ const projects = [
         },
 
         images: [
-            "BANNIERE cope.png"
+            "BANNIERE copie.png"
         ]
     }
 
